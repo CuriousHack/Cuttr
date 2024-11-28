@@ -1,0 +1,24 @@
+const express = require('express')
+
+const getCuttr = (req, res) => {
+    res.send('Hello from cuttrController')
+}
+
+const postCuttr = (req, res) => {
+    res.send('Posting from Cuttr');
+}
+
+const putCuttr = (req, res) => {
+    res.send('Updating from Cuttr');
+}
+
+const deleteCuttr = (req, res) => {
+    res.send('Deleting from Cuttr');
+}
+
+module.exports = {
+    getCuttr,
+    postCuttr,
+    putCuttr,
+    deleteCuttr
+}
