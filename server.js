@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.status(200)
 })
 
-app.use('/api/cut', require('./routes/cuttrRoute'))
+app.use('/api/cut', require('./routes/link'))
 
 app.listen(3000, () => {
     console.log("app running on http://localhost:3000")
