@@ -44,7 +44,7 @@ const getCuttrByKey = (req, res) => {
 const postCuttr = (req, res) => {
     //accept incoming request body
     const {long_url } = req.body;
-    console.log(long_url);
+    // console.log(long_url);
 
     // validate incoming request body
     if (!long_url) {
@@ -76,7 +76,7 @@ const postCuttr = (req, res) => {
 const putCuttr = (req, res) => {
     const key = req.params.key
     const link = req.body
-    console.log(link)
+    // console.log(link)
     Link.findOneAndUpdate({key: key}, link, {new: true})
 
     .then((link) => {
