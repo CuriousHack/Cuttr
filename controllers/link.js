@@ -2,8 +2,6 @@ const dotenv = require('dotenv');
 const Link = require('../models/link')
 
 dotenv.config();
-// const APP_URL = process.env.APP_URL;
-
 
 const getCuttr = (req, res) => {
 
@@ -22,10 +20,16 @@ const getCuttrByKey = (req, res) => {
     Link.findOne({ key })
     .then((link) => {
         if(link){
-            res.status(200).send({
-                "message": "Link found",
-                "data": link 
+            //update the count before redirect
+            Link.findOneAndUpdate({key: key}, {$inc: { clicks: 1}}, {new: true})
+            .then((count) => {
+                console.log("count updated")
             })
+            .catch((err) => {
+                res.status(400).send('invalid request')
+            })
+            
+            res.redirect(302, link.long_url)
         }else{
             res.status(404).send({"message": "Link not Found"})
         }
