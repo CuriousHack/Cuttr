@@ -57,10 +57,12 @@ const postCuttr = (req, res) => {
     }
 
     //create new cuttr
+    const shortUrl = generateShortUrl();
     const newLink = {
-        key: generateShortUrl(),
+        key: shortUrl,
         long_url: long_url,
-    }
+        short_url: `${process.env.APP_URL}/${shortUrl}`
+    };
     Link.create(newLink)
     .then((newLink) => {
         res.status(201)
