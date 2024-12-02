@@ -129,6 +129,8 @@
 <script>
 import NavbarCmp from './NavbarCmp.vue';
 import FooterCmp from './FooterCmp.vue';
+const baseURL = process.env.VUE_APP_BASE_URL;
+
 
 export default {
   name: 'HomePage',
@@ -154,7 +156,7 @@ export default {
           this.isEmpty = false;
         }
 
-        const response = await fetch(`http://127.0.0.1:3000/api/cut`, {
+        const response = await fetch(`${baseURL}/cut`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -164,6 +166,7 @@ export default {
 
         const responseData = await response.json();
         const data = responseData.data
+        
 
         if (data.error) {
           this.errorMessage = data.error;
