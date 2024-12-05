@@ -25,10 +25,12 @@ export default {
 
     try {
       const response = await fetch(`${baseURL}/cut/${key}`);
+      console.log(response);
 
       if (response.ok) {
         const returnedData = await response.json();
-        window.location.href = returnedData.data.long_url;
+        console.log(returnedData)
+        // window.location.href = returnedData.data.long_url;
       } else if (response.status === 404) {
         // Navigate to the 404 NotFoundView route
         router.push({ name: 'Link-not-found' });
