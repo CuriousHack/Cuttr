@@ -13,7 +13,7 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/:key([A-Za-z0-9+/=]+)',
+      path: '/:key',
       name: 'key',
       component: KeyView,
     },
