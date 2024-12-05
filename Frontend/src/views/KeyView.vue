@@ -32,6 +32,7 @@ export default {
         console.log(returnedData)
         // window.location.href = returnedData.data.long_url;
       } else if (response.status === 404) {
+        console.log(response)
         // Navigate to the 404 NotFoundView route
         router.push({ name: 'Link-not-found' });
       } else {
