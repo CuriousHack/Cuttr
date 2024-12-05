@@ -29,7 +29,10 @@ const getCuttrByKey = (req, res) => {
                 res.status(400).send('invalid request')
             })
             
-            res.redirect(302, link.long_url)
+            res.status(200).send({
+                message: "Link Found",
+                data: link
+            })
         }else{
             res.status(404).send({"message": "Link not Found"})
         }
@@ -57,11 +60,11 @@ const postCuttr = (req, res) => {
     }
 
     //create new cuttr
-    const shortUrl = generateShortUrl();
+    const key = generateShortUrl();
     const newLink = {
-        key: shortUrl,
+        key: key,
         long_url: long_url,
-        short_url: `${process.env.APP_URL}/${shortUrl}`
+        short_url: `${process.env.FRONTEND_URL}/${key}`
     };
     Link.create(newLink)
     .then((newLink) => {
