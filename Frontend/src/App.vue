@@ -1,14 +1,9 @@
-<template>
-  <HomePage />
-</template>
-
-<script>
-import HomePage from './components/HomePage.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HomePage
-  }
-}
+<script setup>
+import Navbar from '@/components/Navbar.vue';
+import { RouterView } from 'vue-router';
 </script>
+
+<template>
+  <Navbar />
+  <RouterView />
+</template>
