@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
 
 app.use('/api/cut', require('./routes/link'))
 
-app.listen(3000, () => {
-    console.log("app running on http://localhost:3000")
+app.listen(8000, () => {
+    console.log("app running on http://localhost:8000")
 })
