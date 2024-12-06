@@ -22,11 +22,11 @@ const router = createRouter({
       name: 'Link-not-found',
       component: LinkNotFoundView
     },
-    // {
-    //   path: '/:catchAll(.*)',
-    //   name: 'NotFound',
-    //   component: NotFoundView,
-    // },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: NotFoundView,
+    },
   ],
 });
 

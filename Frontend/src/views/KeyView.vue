@@ -21,8 +21,6 @@ export default {
     const router = useRouter();
     const key = route.params.key;
     const baseURL = import.meta.env.VITE_APP_BASE_URL
-    console.log(key)
-
 
     try {
       const response = await fetch(`${baseURL}/cut/${key}`);
